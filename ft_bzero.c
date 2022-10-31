@@ -6,8 +6,20 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:24:43 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/10/31 12:34:56 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:07:34 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_bzero(void *s, int n)
+{
+	char	*test;
+	int		i;
 
+	test = (char *) s;
+	i = 0;
+	while (i < n)
+	{
+		test[i] = '\0';
+		i++;
+	}
+}

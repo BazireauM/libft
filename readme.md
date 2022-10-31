@@ -4,8 +4,8 @@ isalnum : OK
 isascii : OK
 isprint : OK
 strlen  : OK
-memset
-bzero
+memset	: OK
+bzero	: OK
 memcpy
 memmove
 strlcpy
