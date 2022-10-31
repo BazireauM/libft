@@ -6,7 +6,7 @@ isprint : OK
 strlen  : OK
 memset	: OK
 bzero	: OK
-memcpy
+memcpy	: OK
 memmove
 strlcpy
 strlcat

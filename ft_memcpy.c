@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/10/31 15:36:54 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/10/31 15:10:26 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/10/31 15:36:40 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+void	*ft_memcpy(void *dst, const void *src, int size)
+{
+	char	*src2;
+	char	*dst2;
+	int		i;
 
-
-int		isalnum(int character);
-int		ft_isalpha(int character);
-int		ft_isascii(int c);
-int		isdigit(int character);
-int		ft_isprint(int c);
-void	*ft_memset(void *s, int c, int n);
-void	ft_bzero(void *s, int n);
-void	*ft_memcpy(void	*dst, const void *src, int size);
+	src2 = (char *) src;
+	dst2 = (char *) dst;
+	i = 0;
+	while (i < size)
+	{
+		dst2[i] = src2[i];
+		i++;
+	}
+	return (dst);
+}
