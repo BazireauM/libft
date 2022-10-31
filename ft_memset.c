@@ -1,27 +1,26 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/31 11:20:30 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/10/31 14:53:06 by mbazirea         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, int n)
+void	*ft_memset(void *pointer, int value, int count)
 {
-	int	i;
-	char *test = s;
-	
+	int		i;
+	char	*test;
+
+	test = (char *) pointer;
 	i = 0;
-	while (i < n)
+	while (i < count)
 	{
-		test[i] = '0' + c;
+		test[i] = (char) value;
 		i++;
 	}
-	test[i] = '\0';
-	return (test);
-}
-
-void main()
-{
-	char b[4];
-	memset (b, 48, 2);
-	printf("%s",b);
-	char c[4];
-	ft_memset (c, 48, 2);
-	printf("%s",c);
+	return (pointer);
 }
