@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/10/31 15:49:30 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/10/31 15:38:29 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/10/31 15:49:28 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+void	*memmove(void *dst, const void *src, int size)
+{
+	char *src2;
+	char *dst2;
+	int i;
 
-
-int		isalnum(int character);
-int		ft_isalpha(int character);
-int		ft_isascii(int c);
-int		isdigit(int character);
-int		ft_isprint(int c);
-void	*ft_memset(void *s, int c, int n);
-void	ft_bzero(void *s, int n);
-void	*ft_memcpy(void	*dst, const void *src, int size);
-void	*ft_memmove(void *dst, const void *src, int size);
+	src2 = (char *) src;
+	dst2 = (char *) dst;
+}
