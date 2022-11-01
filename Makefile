@@ -7,7 +7,8 @@ SRCS	=	ft_isalnum.c\
 		ft_isprint.c\
 		ft_strlen.c\
 		ft_memset.c\
-		ft_bzero.c
+		ft_bzero.c\
+		ft_memmove.c
 
 OBJS	=	$(SRCS:.c=.o)
 

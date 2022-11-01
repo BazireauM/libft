@@ -7,7 +7,7 @@ strlen  : OK
 memset	: OK
 bzero	: OK
 memcpy	: OK
-memmove
+memmove : OK
 strlcpy
 strlcat
 toupper
