@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 16:33:46 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 17:34:28 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/11/01 17:36:23 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/11/01 17:45:36 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *s)
+#include <stdlib.h>
+
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	mul;
-	int	final;
+	int		i;
+	char	*dst;
 
 	i = 0;
-	mul = 1;
-	final = 0;
-	while (s[i] != '\0' && (s[i] == '\f' || s[i] == '\r' || s[i] == ' '
-			|| s[i] == '\t' || s[i] == '\v' || s[i] == '\n'))
+	while (s[i] != '\0')
 		i++;
-	if (s[i] == '-')
+	dst = malloc(i);
+	i = 0;
+	while (s[i] != '\0')
 	{
-		mul = -1;
+		dst[i] = s[i];
 		i++;
 	}
-	else if (s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		final = final * 10 + s[i] - 48;
-		i++;
-	}
-	final *= mul;
-	return (final);
+	dst[i] = '\0';
+	return (dst);
 }
