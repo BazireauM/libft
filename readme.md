@@ -16,8 +16,8 @@ strchr	: OK
 strrchr	: OK
 strncmp	: OK
 memchr	: OK
-memcmp
-strnstr
+memcmp	: OK
+strnstr	: OK
 atoi
 calloc
 strdup

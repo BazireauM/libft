@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 14:50:31 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 16:29:18 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/11/01 16:00:26 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/11/01 16:28:48 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(char *s, int c)
+char	*ft_strnstr(char *s1, char *s2, int n)
 {
-	int		i;
-	char	*a;
+	int	i;
+	int	a;
+	int	b;
+	int	d;
 
-	a = 0;
+	d = 0;
+	while (s2[d] != '\0')
+		d++;
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
-		if (s[i] == c)
-			a = &s[i];
+		b = 0;
+		a = 0;
+		while (i + b < n && s2[b] != '\0')
+		{
+			if (s2[b] == s1[i + b])
+				a++;
+			b++;
+		}
+		if (a == d)
+			return (&s1[i]);
 		i++;
 	}
-	return (a);
+	return (0);
 }
