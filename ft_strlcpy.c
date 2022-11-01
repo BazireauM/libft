@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 15:10:26 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 13:41:39 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/11/01 13:18:07 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/11/01 13:45:22 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, int size)
+int	ft_strlcpy(char *dst, const char *src, int size)
 {
-	char	*src2;
-	char	*dst2;
-	int		i;
+	int	i;
 
-	src2 = (char *) src;
-	dst2 = (char *) dst;
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
-		dst2[i] = src2[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (dst);
+	dst[i] = '\0';
+	return (size);
 }

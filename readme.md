@@ -8,7 +8,7 @@ memset	: OK
 bzero	: OK
 memcpy	: OK
 memmove : OK
-strlcpy
+strlcpy	: OK
 strlcat
 toupper
 tolower
