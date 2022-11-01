@@ -13,7 +13,9 @@ SRCS	=	ft_isalnum.c\
 		ft_strlcat.c\
 		ft_toupper.c\
 		ft_tolower.c\
-		ft_strchr.c
+		ft_strchr.c\
+		ft_strrchr.c\
+		ft_strncmp.c
 
 OBJS	=	$(SRCS:.c=.o)
 

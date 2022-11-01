@@ -13,8 +13,8 @@ strlcat	: OK
 toupper	: OK
 tolower	: OK
 strchr	: OK
-strrchr
-strncmp
+strrchr	: OK
+strncmp	: OK
 memchr
 memcmp
 strnstr
