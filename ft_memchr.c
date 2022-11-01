@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:19:06 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 15:34:28 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:57:18 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	*ft_memchr(void *m, int c, int size)
 			return (&m2[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

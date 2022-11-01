@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 15:34:48 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:51:16 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,4 @@ char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, int size);
 void	*ft_memchr(const void *m, int c, int size);
+int		ft_memcmp(void *p1, void *p2, int size);

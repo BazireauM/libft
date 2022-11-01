@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 14:50:31 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 15:56:57 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/11/01 15:36:17 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/11/01 15:50:44 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(char *s, int c)
+int	ft_memcmp(void *p1, void *p2, int size)
 {
+	char	*a1;
+	char	*a2;
 	int		i;
-	char *a;
-	a = 0;
 
+	a1 = (char *) p1;
+	a2 = (char *) p2;
 	i = 0;
-	while (s[i] != '\0')
+	while (i < size)
 	{
-		if (s[i] == c)
-			a = &s[i];
+		if (a1[i] < a2[i])
+			return (-1);
+		if (a1[i] > a2[i])
+			return (1);
 		i++;
 	}
-	return (a);
+	return (0);
 }
