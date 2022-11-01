@@ -1,26 +1,26 @@
-isalpha : OK
-isdigit : OK
-isalnum : OK
-isascii : OK
-isprint : OK
-strlen  : OK
-memset	: OK
-bzero	: OK
-memcpy	: OK
-memmove : OK
-strlcpy	: OK
-strlcat	: OK
-toupper	: OK
-tolower	: OK
-strchr	: OK
-strrchr	: OK
-strncmp	: OK
-memchr	: OK
-memcmp	: OK
-strnstr	: OK
-atoi	: OK
-calloc	: OK
-strdup
+isalpha 	: OK
+isdigit 	: OK
+isalnum 	: OK
+isascii 	: OK
+isprint 	: OK
+strlen  	: OK
+memset		: OK
+bzero		: OK
+memcpy		: OK
+memmove 	: OK
+strlcpy		: OK
+strlcat		: OK
+toupper		: OK
+tolower		: OK
+strchr		: OK
+strrchr		: OK
+strncmp		: OK
+memchr		: OK
+memcmp		: OK
+strnstr		: OK
+atoi		: OK
+calloc		: OK
+strdup		: OK
 ft_substr
 ft_strjoin
 ft_strtrim
