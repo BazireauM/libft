@@ -9,10 +9,10 @@ bzero	: OK
 memcpy	: OK
 memmove : OK
 strlcpy	: OK
-strlcat
-toupper
-tolower
-strchr
+strlcat	: OK
+toupper	: OK
+tolower	: OK
+strchr	: OK
 strrchr
 strncmp
 memchr

@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 14:09:34 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:48:46 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,6 @@ void	*ft_memcpy(void	*dst, const void *src, int size);
 void	*ft_memmove(void *dst, const void *src, int size);
 int		ft_strlcpy(char *dst, const char *src, int size);
 int		ft_strlcat(char *dst, const char *src, int size);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strchr(char *s, int c);
