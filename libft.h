@@ -6,13 +6,13 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 16:57:30 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:10:41 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 
 int		isalnum(int character);
 int		ft_isalpha(int character);
@@ -34,3 +34,4 @@ void	*ft_memchr(const void *m, int c, int size);
 int		ft_memcmp(void *p1, void *p2, int size);
 char	*ft_strnstr(char *s1, char *s2, int n);
 int		ft_atoi(const char *s);
+void	*ft_calloc(int count, int size);

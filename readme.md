@@ -18,8 +18,8 @@ strncmp	: OK
 memchr	: OK
 memcmp	: OK
 strnstr	: OK
-atoi
-calloc
+atoi	: OK
+calloc	: OK
 strdup
 ft_substr
 ft_strjoin
