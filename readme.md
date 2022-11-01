@@ -15,7 +15,7 @@ tolower	: OK
 strchr	: OK
 strrchr	: OK
 strncmp	: OK
-memchr
+memchr	: OK
 memcmp
 strnstr
 atoi
