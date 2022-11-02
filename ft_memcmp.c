@@ -6,25 +6,26 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:36:17 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 15:50:44 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:11:52 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(void *p1, void *p2, int size)
-{
-	char	*a1;
-	char	*a2;
-	int		i;
+#include "libft.h"
 
-	a1 = (char *) p1;
-	a2 = (char *) p2;
+int	ft_memcmp(const void *p1, const void *p2, size_t size)
+{
+	unsigned char	*a1;
+	unsigned char	*a2;
+	int				i;
+
+	a1 = (unsigned char *) p1;
+	a2 = (unsigned char *) p2;
 	i = 0;
-	while (i < size)
+	while (size > 0)
 	{
-		if (a1[i] < a2[i])
-			return (-1);
-		if (a1[i] > a2[i])
-			return (1);
+		if (a1[i] != a2[i])
+			return (a1[i] - a2[i]);
+		size--;
 		i++;
 	}
 	return (0);

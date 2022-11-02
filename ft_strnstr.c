@@ -6,33 +6,32 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:00:26 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 16:28:48 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:06:45 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *s1, char *s2, int n)
+#include "libft.h"
+
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 	int	a;
-	int	b;
 	int	d;
 
-	d = 0;
-	while (s2[d] != '\0')
-		d++;
+	d = ft_strlen(s2);
 	i = 0;
-	while (i < n)
+	if (s2[0] == '\0')
+		return ((char *) s1);
+	while (i < (int) n && s1[i])
 	{
-		b = 0;
-		a = 0;
-		while (i + b < n && s2[b] != '\0')
+		if (s1[i] == s2[0])
 		{
-			if (s2[b] == s1[i + b])
+			a = 0;
+			while (s1[i + a] == s2[a] && s2[a] && s1[i + a] && i + a < (int) n)
 				a++;
-			b++;
+			if (s2[a] == '\0')
+				return ((char *) &s1[i]);
 		}
-		if (a == d)
-			return (&s1[i]);
 		i++;
 	}
 	return (0);
