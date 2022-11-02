@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:38:36 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/02 20:35:31 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/02 20:44:19 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start2 = start(s1, set);
 	end2 = end(s1, set);
 	if (start2 == (int) ft_strlen(s1))
-		return (NULL);
+	{
+		final = malloc(1);
+		final[0] = '\0';
+		return (final);
+	}
 	final = malloc(sizeof(char) * ft_strlen(s1) - start2 - end2 + 1);
 	if (!final)
 		return (NULL);

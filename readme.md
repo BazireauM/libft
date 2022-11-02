@@ -21,8 +21,8 @@ strnstr		: OK
 atoi		: OK
 calloc		: OK
 strdup		: OK
-ft_substr
-ft_strjoin
+ft_substr	: OK
+ft_strjoin	: OK
 ft_strtrim
 ft_split
 ft_itoa
