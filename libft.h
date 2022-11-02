@@ -6,25 +6,27 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:33 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 17:51:24 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:30:54 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <ctype.h>
 #include <stdlib.h>
 
-int		isalnum(int character);
-int		ft_isalpha(int character);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
-int		isdigit(int character);
+int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memset(void *s, int c, int n);
 void	ft_bzero(void *s, int n);
 void	*ft_memcpy(void	*dst, const void *src, int size);
-void	*ft_memmove(void *dst, const void *src, int size);
-int		ft_strlcpy(char *dst, const char *src, int size);
-int		ft_strlcat(char *dst, const char *src, int size);
+void	*ft_memmove(void *dst, const void *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(char *s, int c);
@@ -36,3 +38,4 @@ char	*ft_strnstr(char *s1, char *s2, int n);
 int		ft_atoi(const char *s);
 void	*ft_calloc(int count, int size);
 char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);

@@ -6,13 +6,15 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:21:31 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/10/31 11:44:32 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:31:30 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int character)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if (character >= '1' && character <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
