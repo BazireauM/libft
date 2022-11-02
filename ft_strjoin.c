@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 17:48:18 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/02 19:18:13 by mbazirea         ###   ########.fr       */
+/*   Created: 2022/11/02 19:18:42 by mbazirea          #+#    #+#             */
+/*   Updated: 2022/11/02 20:33:58 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	b;
-	size_t	a;
+	int		a;
+	int		b;
 	char	*final;
 
-	final = malloc(sizeof(char) * (int) len + 1);
+	a = strlen(s1) + strlen(s2);
+	final = malloc(sizeof(char) * a + 1);
 	if (!final)
 		return (NULL);
-	b = 0;
 	a = 0;
-	while (s[b + start])
+	b = 0;
+	while (s1[b])
 	{
-		if (b >= start && a < len)
-		{
-			final[a] = s[b];
-			a++;
-		}
+		final[a] = s1[b];
 		b++;
+		a++;
+	}
+	b = 0;
+	while (s2[b])
+	{
+		final[a] = s2[b];
+		b++;
+		a++;
 	}
 	final[a] = '\0';
 	return (final);

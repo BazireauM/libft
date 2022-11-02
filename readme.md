@@ -7,20 +7,20 @@ strlen  	: OK
 memset		: OK
 bzero		: OK
 memcpy		: OK
-memmove 	: KO
+memmove 	: OK
 strlcpy		: OK
 strlcat		: OK
 toupper		: OK
 tolower		: OK
-strchr		: KO
-strrchr		: KO
-strncmp		: KO
+strchr		: OK
+strrchr		: OK
+strncmp		: OK
 memchr		: OK
-memcmp		: KO
-strnstr		: KO
+memcmp		: OK
+strnstr		: OK
 atoi		: OK
 calloc		: OK
-strdup		: KO
+strdup		: OK
 ft_substr
 ft_strjoin
 ft_strtrim
