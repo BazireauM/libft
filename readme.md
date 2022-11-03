@@ -23,12 +23,12 @@ calloc		: OK
 strdup		: OK
 ft_substr	: OK
 ft_strjoin	: OK
-ft_strtrim
+ft_strtrim	: OK
 ft_split
-ft_itoa
+ft_itoa		: OK
 ft_strmapi
 ft_striteri
-ft_putchar_fd
-ft_putstr_fd
-ft_putendl_fd
-ft_putnbr_fd
+ft_putchar_fd	: OK
+ft_putstr_fd	: OK
+ft_putendl_fd	: OK
+ft_putnbr_fd	: OK
