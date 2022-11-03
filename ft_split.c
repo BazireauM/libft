@@ -12,89 +12,78 @@
 
 #include "libft.h"
 
-int	n_split(char const *s, char c)
+int		ft_word_count(char const *s, char c)
 {
-	int	a;
-	int	b;
+	int	i;
+	int	cnt;
 
-	a = 0;
-	b = 0;
-	while (s[a])
+	i = 0;
+	cnt = 0;
+	while (s[i])
 	{
-		while (s[a] != c && s[a])
-			a++;
-		while (s[a] == c)
-			a++;
-		b++;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			cnt++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
-	return (b);
+	return (cnt);
 }
 
-void	final_malloc(char **final, char *s2, char c)
+char	*ft_word_make(char *word, char const *s, int k, int word_len)
 {
-	int	a;
-	int	b;
-	int	d;
+	int		i;
 
-	a = 0;
-	d = 0;
-	while (s2[a])
-	{
-		b = 0;
-		while (s2[a] != c && s2[a])
-		{
-			a++;
-			b++;
-		}
-		while (s2[a] == c)
-			a++;
-		final[d] = malloc(sizeof(char) * b + 1);
-		d++;
-	}
+	i = 0;
+	while (word_len > 0)
+		word[i++] = s[k - word_len--];
+	word[i] = '\0';
+	return (word);
 }
 
-void	final_final(char **final, char *s2, char c)
-{	
-	int	a;
-	int	b;
-	int	d;
+char	**ft_split2(char **result, char const *s, char c, int word_num)
+{
+	int		i;
+	int		k;
+	int		word_len;
 
-	a = 0;
-	d = 0;
-	while (s2[a])
+	i = 0;
+	k = 0;
+	word_len = 0;
+	while (s[k] && i < word_num)
 	{
-		b = 0;
-		while (s2[a] != c && s2[a])
+		while (s[k] && s[k] == c)
+			k++;
+		while (s[k] && s[k] != c)
 		{
-			final[d][b] = s2[a];
-			a++;
-			b++;
+			k++;
+			word_len++;
 		}
-		final[d][b] = '\0';
-		while (s2[a] == c)
-		{
-			a++;
-		}
-		d++;
+		if (!(result[i] = (char *)malloc(sizeof(char) * (word_len + 1))))
+			return (NULL);
+		ft_word_make(result[i], s, k, word_len);
+		word_len = 0;
+		i++;
 	}
+	result[i] = 0;
+	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	*s2;
-	char	**final;
-	int		n_split2;
+	int		word_num;
+	char	**result;
 
-	s2 = ft_strtrim((char *) s, &c);
-	n_split2 = n_split(s2, c);
-	final = malloc(sizeof(char *) * n_split2 + 1);
-	if (!final)
+	if (s == 0)
 		return (NULL);
-	final_malloc(final, s2, c);
-	final_final(final, s2, c);
-	final[n_split2] = NULL;
-	free(s2);
-	return (final);
+	word_num = ft_word_count(s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (word_num + 1))))
+		return (NULL);
+	ft_split2(result, s, c, word_num);
+	return (result);
 }
 /*
 int main(void)
