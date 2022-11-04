@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:44:47 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/03 12:30:31 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:16:42 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*fill_split(char *split, char const *s, int a, int len)
 	return (split);
 }
 
-int		get_n_split(char const *s, char c)
+int	get_n_split(char const *s, char c)
 {
 	int	i;
 	int	n_split;
@@ -67,7 +67,7 @@ char	**ft_split2(char **final, char const *s, char c, int n_split)
 			len++;
 		}
 		final[b] = malloc(sizeof(char) * (len + 1));
-		if(!final[b])
+		if (!final[b])
 			return (NULL);
 		fill_split(final[b], s, i, len);
 		len = 0;
@@ -79,7 +79,7 @@ char	**ft_split2(char **final, char const *s, char c, int n_split)
 
 char	**ft_split(char const *s, char c)
 {
-	int	n_split;
+	int		n_split;
 	char	**final;
 
 	if (s == 0)

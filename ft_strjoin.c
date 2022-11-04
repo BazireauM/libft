@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:18:42 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/02 20:33:58 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:20:59 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		b;
 	char	*final;
 
-	a = strlen(s1) + strlen(s2);
+	a = ft_strlen(s1) + ft_strlen(s2);
 	final = malloc(sizeof(char) * a + 1);
 	if (!final)
 		return (NULL);
