@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:50:31 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/02 17:32:27 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:30:24 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char) c)
 			a = &s[i];
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (char) c)
 		a = &s[i];
 	return (a);
 }

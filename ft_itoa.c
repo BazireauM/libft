@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:31:03 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/03 13:43:04 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:00:37 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ void	zero(char *final)
 	final[1] = '\0';
 }
 
+char	*ft_itoa_part2(int a, int n, char *final, unsigned int n2)
+{
+	while (a > 0 && n != 0)
+	{
+		if (n < 0)
+			final[a] = '0' + n2 % 10;
+		else
+			final[a - 1] = '0' + n2 % 10;
+		n2 /= 10;
+		a--;
+	}
+	return (final);
+}
+
 char	*ft_itoa(int n)
 {
 	char			*final;
@@ -63,14 +77,8 @@ char	*ft_itoa(int n)
 	else
 		n2 = n;
 	final = malloc_final(n, n2, &a);
-	while (a > 0 && n != 0)
-	{
-		if (n < 0)
-			final[a] = '0' + n2 % 10;
-		else
-			final[a - 1] = '0' + n2 % 10;
-		n2 /= 10;
-		a--;
-	}
+	if (!final)
+		return (NULL);
+	ft_itoa_part2(a, n, final, n2);
 	return (final);
 }

@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:10:26 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 13:41:39 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:34:41 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, int size)
 
 	src2 = (char *) src;
 	dst2 = (char *) dst;
+	if (!dst && !src)
+		return (dst);
 	i = 0;
 	while (i < size)
 	{
