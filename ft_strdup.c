@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:36:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/02 17:19:34 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:13:07 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s)
 	while (s[i] != '\0')
 		i++;
 	dst = malloc(i + 1);
+	if (!dst)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
