@@ -6,17 +6,17 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:00:00 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/04 15:26:56 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:30:27 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(int count, int size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*test;
 	char	*null;
-	int		i;
+	size_t	i;
 
 	test = malloc (count * size);
 	if (!test)
