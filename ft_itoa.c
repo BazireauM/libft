@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:31:03 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/04 16:00:37 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 12:59:23 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,21 @@ char	*ft_itoa(int n)
 	if (n == 0)
 	{
 		final = malloc(2);
+		if (!final)
+			return (NULL);
 		zero(final);
 		return (final);
 	}
-	if (n < 0)
-		n2 = -n;
 	else
-		n2 = n;
-	final = malloc_final(n, n2, &a);
-	if (!final)
-		return (NULL);
-	ft_itoa_part2(a, n, final, n2);
-	return (final);
+	{
+		if (n < 0)
+			n2 = -n;
+		else
+			n2 = n;
+		final = malloc_final(n, n2, &a);
+		if (!final)
+			return (NULL);
+		ft_itoa_part2(a, n, final, n2);
+		return (final);
+	}
 }

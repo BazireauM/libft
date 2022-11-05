@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:44:47 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/04 14:16:42 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 13:33:46 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ int	get_n_split(char const *s, char c)
 	return (n_split);
 }
 
+void	no_leaks(char **final, int b)
+{
+	while (b >= 0)
+	{
+		free(final[b]);
+		b--;
+	}
+}
+
 char	**ft_split2(char **final, char const *s, char c, int n_split)
 {
 	int		i;
@@ -56,21 +65,20 @@ char	**ft_split2(char **final, char const *s, char c, int n_split)
 
 	b = 0;
 	i = 0;
-	len = 0;
 	while (s[i] && b < n_split)
 	{
+		len = 0;
 		while (s[i] && s[i] == c)
 			i++;
-		while (s[i] && s[i] != c)
-		{
-			i++;
+		i--;
+		while (s[++i] && s[i] != c)
 			len++;
-		}
 		final[b] = malloc(sizeof(char) * (len + 1));
+		if (!final[b])
+			no_leaks(final, b);
 		if (!final[b])
 			return (NULL);
 		fill_split(final[b], s, i, len);
-		len = 0;
 		b++;
 	}
 	final[b] = 0;
@@ -81,6 +89,7 @@ char	**ft_split(char const *s, char c)
 {
 	int		n_split;
 	char	**final;
+	char	**d;
 
 	if (s == 0)
 		return (NULL);
@@ -88,6 +97,11 @@ char	**ft_split(char const *s, char c)
 	final = malloc(sizeof(char *) * (n_split + 1));
 	if (!final)
 		return (NULL);
-	ft_split2(final, s, c, n_split);
+	d = ft_split2(final, s, c, n_split);
+	if (d == NULL)
+	{
+		free (final);
+		return (NULL);
+	}
 	return (final);
 }
