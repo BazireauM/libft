@@ -6,13 +6,15 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:19:06 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/01 15:57:18 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:17:59 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(void *m, int c, int size)
+#include "libft.h"
+
+void	*ft_memchr(const void *m, int c, size_t size)
 {
-	int		i;
+	size_t	i;
 	char	*m2;
 
 	m2 = (char *) m;

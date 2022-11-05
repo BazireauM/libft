@@ -6,14 +6,16 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:24:43 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/10/31 15:07:34 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:06:19 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*test;
-	int		i;
+	size_t	i;
 
 	test = (char *) s;
 	i = 0;

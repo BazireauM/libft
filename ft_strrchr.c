@@ -6,24 +6,26 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:50:31 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/04 15:30:24 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:14:55 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	*a;
 
-	a = 0;
 	i = 0;
+	a = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char) c)
-			a = &s[i];
+			a = (char *) &s[i];
 		i++;
 	}
 	if (s[i] == (char) c)
-		a = &s[i];
+		a = (char *) &s[i];
 	return (a);
 }
