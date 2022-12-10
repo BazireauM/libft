@@ -35,7 +35,12 @@ SRCS	=	ft_isalnum.c\
 		ft_strmapi.c\
 		ft_striteri.c
 
-SRCS_BONUS	=	ft_lstnew.c
+SRCS_BONUS	=	ft_lstnew.c\
+				ft_lstadd_front.c\
+				ft_lstsize.c\
+				ft_lstlast.c\
+				ft_lstadd_back.c\
+				ft_lstdelone.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -53,7 +58,7 @@ $(NAME)	:	$(OBJS)
 		ar -rcs $(NAME) $(OBJS)
 
 clean	:	
-		$(RM) $(OBJS)
+		$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean	:	clean
 
@@ -61,5 +66,5 @@ fclean	:	clean
 
 re	:	fclean $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:			$(OBJS) $(OBJS_BONUS)
+				ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
